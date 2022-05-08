@@ -8,7 +8,7 @@ import java.util.Scanner;
  public class Menu {
 
   public void displayLevel1() {
-   System.out.println("D.Display caTEring Items\nP.Purchase\nE.Exit");
+   System.out.println("D.Display Items\nP.Purchase\nE.Exit");
 
   }
 
