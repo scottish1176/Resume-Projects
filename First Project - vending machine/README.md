@@ -1,21 +1,26 @@
-## Module 1 Capstone - Taste Elevator CaTEring Corp
+## This is the first project I ever worked on during my Tech Elevator education
 
-You've been asked to develop an application for a catering(food) distributor,
-Taste Elevator CaTEring Corp. Customers purchased food items from the catering machine and are charged accordingly.
+It's a basic command line system that allows a user to view items available in the vending machine, input money, make a selection, return change, log all of the actions of the vending machine and take in a file that sets the snack contents of the machine.
 
-### Application Requirements
+___
 
-1. The CaTEring machine dispenses munchies, sandwiches, drinks, and desserts.
+### Future changes I'd like to make:
+Now that I've gained more experience with Java I'd like to compartmentalise more of the command line menu as well as functions of the code into distinct methods and perhaps classes. I believe there is one bug I still need to fix but otherwise I'm proud of what I was able to accomplish with only 4 weeks of study and zero prior coding experience.
+___
+
+### These are the application requirements
+
+1. The vending machine dispenses munchies, sandwiches, drinks, and desserts.
    - Each item has a Name and a Price.
 2. A main menu must display when the software runs, presenting the following options:
     > ```
-    > (D) Display caTEring Items
+    > (D) Display Items
     > (P) Purchase
     > (E) Exit
     > ```
 3. The inventory is stocked via an input file when the application starts.  **2 different files are provided, make sure your program will work with either one.**
 4. Each time the application runs, the inventory is restocked.  The only time the inventory is stocked is when it is started.
-5. When the customer selects "(D) Display caTEring Items", they're presented
+5. When the customer selects "(D) Display Items", they're presented
    with a list of all items in the machine with its quantity remaining:
    
     - Each item has a slot identifier and a purchase price.
@@ -73,14 +78,10 @@ Taste Elevator CaTEring Corp. Customers purchased food items from the catering m
          >```
 9. Create as many of your classes as possible to be "testable" classes. **Limit console**
 **input and output to as few classes as possible**.
-10. Optional - Sales Report
-    - Provide a "Hidden" menu option on the main menu ("S") that writes to a sales
-    report that shows the total sales since the machine was started. The name of the
-    file must include the date and time so each sales report is uniquely named.
-    - An example of the output format is provided below.
-11. Provide unit tests demonstrating that your code works correctly.
+10. Provide unit tests demonstrating that your code works correctly.
 ___
-### CaTEring Data File
+
+### Vending Data File
 The input file that stocks the items is a comma separated values file (csv). Each line is a separate item in the file and follows the below format:
 
  Column Name   | Description 
