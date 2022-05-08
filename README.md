@@ -1,2 +1,2 @@
 # Resume-Projects
-These are my showcase projects for current and future employers
+These are some of the projects I worked on during my time at Tech Elevator
