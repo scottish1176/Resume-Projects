@@ -5,9 +5,7 @@ This project was made up of 3 parts based on the MVC model. The view is called "
 
 ## Use cases
 
-### Required use cases
-
-You should attempt to complete all of the following required use cases.
+### Completed use cases
 
 1. As a user of the system, I need to be able to register myself with a username and password.
    1. A new registered user starts with an initial balance of 1,000 TE Bucks.
@@ -53,7 +51,7 @@ You should attempt to complete all of the following required use cases.
    
    If the transfer is rejected, no account balance changes.
 
-### Optional API Documentation via Swagger
+### API Documentation via Swagger
 
 1. Add Swagger dependencies to the POM file and add a SpringFoxConfig class
 2. Add `@ApiOperation` and `@ApiParam` attributes to the methods in the controllers
