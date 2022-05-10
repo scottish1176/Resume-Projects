@@ -1,6 +1,7 @@
-# Module 2 Capstone - TEnmo
+# 2nd Project - Venmo model - "TEnmo"
 
-Congratulations—you've landed a job with TEnmo, whose product is an online payment service for transferring "TE bucks" between friends. However, they don't have a product yet. You've been tasked with writing a RESTful API server and command-line application.
+This project was made up of 3 parts based on the MVC model. The view is called "client", the controller is called "server", and the model is a databse built using pgAdmin with SQL. The database consists of the tables and the various key relationships between them all. The server communicates with the database using Sprong Boot's JdbcTemplate. The client communicates with the server using Spring's RestTemplate with Http endpoints.
+
 
 ## Use cases
 
@@ -8,14 +9,14 @@ Congratulations—you've landed a job with TEnmo, whose product is an online pay
 
 You should attempt to complete all of the following required use cases.
 
-1. **[COMPLETE]** As a user of the system, I need to be able to register myself with a username and password.
+1. As a user of the system, I need to be able to register myself with a username and password.
    1. A new registered user starts with an initial balance of 1,000 TE Bucks.
    2. The ability to register has been provided in your starter code.
-2. **[COMPLETE]** As a user of the system, I need to be able to log in using my registered username and password.
+2. As a user of the system, I need to be able to log in using my registered username and password.
    1. Logging in returns an Authentication Token. I need to include this token with all my subsequent interactions with the system outside of registering and logging in.
    2. The ability to log in has been provided in your starter code.
-3. **[COMPLETE]** As an authenticated user of the system, I need to be able to see my Account Balance.
-4. **[COMPLETE]** As an authenticated user of the system, I need to be able to *send* a transfer of a specific amount of TE Bucks to a registered user.
+3. As an authenticated user of the system, I need to be able to see my Account Balance.
+4. As an authenticated user of the system, I need to be able to *send* a transfer of a specific amount of TE Bucks to a registered user.
    1. I should be able to choose from a list of users to send TE Bucks to.
    2. I must not be allowed to send money to myself.
    3. A transfer includes the User IDs of the from and to users and the amount of TE Bucks.
@@ -24,12 +25,10 @@ You should attempt to complete all of the following required use cases.
    6. I can't send more TE Bucks than I have in my account.
    7. I can't send a zero or negative amount.
    8. A Sending Transfer has an initial status of *Approved*.
-5. **[COMPLETE]** As an authenticated user of the system, I need to be able to see transfers I have sent or received.
-6. **[COMPLETE]** As an authenticated user of the system, I need to be able to retrieve the details of any transfer based upon the transfer ID.
+5. As an authenticated user of the system, I need to be able to see transfers I have sent or received.
+6. As an authenticated user of the system, I need to be able to retrieve the details of any transfer based upon the transfer ID.
 
-### Optional use cases
-
-If you complete all of the required use cases and are looking for additional challenge, complete as many of the following optional use cases as you can.
+### Possible additions for next revision
 
 7. As an authenticated user of the system, I need to be able to *request* a transfer of a specific amount of TE Bucks from another registered user.
    1. I should be able to choose from a list of users to request TE Bucks from.
@@ -56,7 +55,7 @@ If you complete all of the required use cases and are looking for additional cha
 
 ### Optional API Documentation via Swagger
 
-1. **[COMPLETE]** Add Swagger dependencies to the POM file and add a SpringFoxConfig class
+1. Add Swagger dependencies to the POM file and add a SpringFoxConfig class
 2. Add `@ApiOperation` and `@ApiParam` attributes to the methods in the controllers
 3. Verify the documentation by accessing `http://localhost:8080/swagger-ui.html`
 
@@ -219,6 +218,6 @@ In the database folder, you'll find the database creation scripts and a shell sc
 
 ## Authentication
 
-The user registration and authentication functionality for the system has already been implemented. If you review the login code, you'll notice that after successful authentication, an instance of `AuthenticatedUser` is stored in the `currentUser` member variable of `App`. The user's authorization token—meaning JWT—can be accessed from `App` as `currentUser.getToken()`.
+The user registration and authentication functionality for the system has been implemented. If you review the login code, you'll notice that after successful authentication, an instance of `AuthenticatedUser` is stored in the `currentUser` member variable of `App`. The user's authorization token—meaning JWT—can be accessed from `App` as `currentUser.getToken()`.
 
 When the use cases refer to an "authenticated user", this means a request that includes the token as a header. You can also reference other information about the current user by using the `User` object retrieved from `currentUser.getUser()`.
