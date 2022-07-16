@@ -21,7 +21,7 @@ export default {
             },
             headers: {
                 'X-RapidAPI-Host': 'us-real-estate.p.rapidapi.com',
-                //'X-RapidAPI-Key': 'KEY GOES HERE'
+                //'X-RapidAPI-Key': 'KEY GOES HERE, it's a paid API so I"m not going to hand it out for free:)'
             }
         };
         return axios.request(options)
