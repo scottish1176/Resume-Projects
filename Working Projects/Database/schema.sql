@@ -1,15 +1,15 @@
 BEGIN TRANSACTION;
 
 
-DROP TABLE IF EXISTS recipe;
+DROP TABLE IF EXISTS recipe CASCADE;
 DROP SEQUENCE IF EXISTS seq_recipe_id;
-DROP TABLE IF EXISTS ingredient;
+DROP TABLE IF EXISTS ingredient CASCADE;
 DROP SEQUENCE IF EXISTS seq_ingredient_id;
-DROP TABLE IF EXISTS measurement_units;
+DROP TABLE IF EXISTS measurement_units CASCADE;
 DROP SEQUENCE IF EXISTS seq_measurement_units_id;
-DROP TABLE IF EXISTS measurement_qty;
+DROP TABLE IF EXISTS measurement_qty CASCADE;
 DROP SEQUENCE IF EXISTS seq_measurement_qty_id;
-DROP TABLE IF EXISTS recipe_ingredients;
+DROP TABLE IF EXISTS recipe_ingredients CASCADE;
 --DROP TABLE IF EXISTS users;
 
 
@@ -30,8 +30,8 @@ CREATE TABLE recipe (
 );
 
 INSERT INTO recipe 
-(title, description, directions, notes_from_author, original_source)
-VALUES ('Taco Pie', 'Annie favorite', 
+(recipe_id, title, description, directions, notes_from_author, original_source)
+VALUES (1000, 'Taco Pie', 'Annie favorite', 
 '1. Combine all dry crust ingredents in a bowl. 
 2.Whisk the egg then combine with dry ingredients.
 3. knead the mixture with your hands and form the dough into a ball. Press the dough into pie plate as evenly as possible, Bake at 350 for 10-15 minutes (until slightly browned). Set aside.
@@ -84,6 +84,14 @@ CREATE TABLE measurement_units (
   CONSTRAINT PK_measurement_units PRIMARY KEY (measurement_units_id)
 );
 
+INSERT INTO measurement_units 
+(measurement_units_id, measurement_description)
+VALUES (3000, 'Cups'),
+(3001, 'tsp'),
+(3002, 'Tbsp'),
+(3003, 'lbs'),
+(3004, 'whole');
+
 
 CREATE SEQUENCE seq_measurement_qty_id
 INCREMENT BY 1
@@ -97,6 +105,13 @@ CREATE TABLE measurement_qty (
   CONSTRAINT PK_measurement_qty PRIMARY KEY (measurement_qty_id)
 );
 
+INSERT INTO measurement_qty
+(measurement_qty_id, qty_amount)
+VALUES (4000, '1'),
+(4001, '2'),
+(4002, '3'),
+(4003, '1/2');
+
 
 CREATE TABLE recipe_ingredients (
   recipe_id int NOT NULL,
@@ -109,6 +124,22 @@ CREATE TABLE recipe_ingredients (
   CONSTRAINT FK_measurement_qty FOREIGN KEY (measurement_qty_id) REFERENCES measurement_qty(measurement_qty_id)
 );
 
+INSERT INTO recipe_ingredients
+(recipe_id, ingredient_id, measurement_units_id, measurement_qty_id)
+VALUES (1000, 2000, 3000, 4001),--TP, almund Flour, cups, 2
+(1000, 2001, 3001, 4000),--TP, sea salt, tsp, 1
+(1000, 2002, 3001, 4001),--TP, Chipotle Chili Powder, tsp, 2
+(1000, 2003, 3001, 4000),--TP, Baking Powder, tsp, 1
+(1000, 2004, 3004, 4000),--TP, egg, whole, 1
+(1000, 2005, 3003, 4000),
+(1000, 2006, 3002, 4001),
+(1000, 2007, 3001, 4001),
+(1000, 2008, 3001, 4003),
+(1000, 2009, 3001, 4003),
+(1000, 2010, 3001, 4001),
+(1000, 2011, 3001, 4003),
+(1000, 2012, 3000, 4003),
+(1000, 2013, 3002, 4002);
 
 --CREATE SEQUENCE seq_user_id
 --  INCREMENT BY 1
